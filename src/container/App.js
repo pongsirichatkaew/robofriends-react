@@ -4,30 +4,16 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import ErrorBoundary from '../components/ErrorBoundary';
+import { useSelector, useDispatch } from 'react-redux';
+import { requestRobots } from '../redux/robots/robots.action';
 function App() {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     robots: [],
-  //     searchField: '',
-  //   };
-  // }
-
-  const [robots, setRobots] = useState([]);
   const [searchField, setSearchField] = useState('');
-  // const [count, setCount] = useState(0);
-  // componentDidMount() {
-  //   fetch('https://jsonplaceholder.typicode.com/users')
-  //     .then((response) => response.json())
-  //     .then((users) => this.setState({ robots: users }));
-  // }
+  const dispatch = useDispatch();
+  const robots = useSelector((state) => state.robots.users);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((response) => response.json())
-      .then((users) => setRobots(users));
-    // console.log('count,', count);
-  }, []);
+    dispatch(requestRobots());
+  }, [dispatch]);
 
   const onSearchChange = (event) => {
     setSearchField(event.target.value);

@@ -4,7 +4,14 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './container/App';
 import 'tachyons';
-ReactDOM.render(<App />, document.getElementById('root'));
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
