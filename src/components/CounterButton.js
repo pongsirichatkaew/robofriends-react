@@ -8,15 +8,15 @@ class CounterButton extends PureComponent {
     };
   }
 
-//   shouldComponentUpdate(nextProps, nextState) {
-//     if (this.state.count !== nextState.count) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//     // console.log('nextProps', nextProps, nextState);
-//     // return true;
-//   }
+  //   shouldComponentUpdate(nextProps, nextState) {
+  //     if (this.state.count !== nextState.count) {
+  //       return true;
+  //     } else {
+  //       return false;
+  //     }
+  //     // console.log('nextProps', nextProps, nextState);
+  //     // return true;
+  //   }
 
   updateCount = () => {
     // this.setState({ count: this.state.count + 1 });
@@ -27,7 +27,7 @@ class CounterButton extends PureComponent {
   render() {
     console.log('CounterButton render');
     return (
-      <button color={this.props.color} onClick={this.updateCount}>
+      <button id='counter' color={this.props.color} onClick={this.updateCount}>
         Count: {this.state.count}
       </button>
     );
