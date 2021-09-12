@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Header from '../components/Header';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
@@ -26,7 +27,7 @@ function App() {
     <h1 className='tc'>Loading</h1>
   ) : (
     <div className='tc'>
-      <h1>RoboFrineds</h1>
+      <Header />
       <SearchBox searchChange={onSearchChange} />
       {/*<button onClick={() => setCount(count + 1)}>Click Me!</button>*/}
       <Scroll>
